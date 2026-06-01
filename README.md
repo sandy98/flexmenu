@@ -6,9 +6,9 @@ Menu web component with built-in flexibility to accommodate itself to mobile scr
 
 * **`<color-label>`** **: Base presentation element utilizing the styling mixin pipeline.**
 * **`<menu-item>`** **: Clickable, navigation-ready component designed to live inside menus.**
-* **`<menu-list>`** **: ***(Documented in part 2)* Container element.
-* **`<hamburger-button>`** **: ***(Documented in part 2)* Responsive trigger element.
-* **`<flex-menu>`** **: ***(Documented in part 2)* The top-level responsive layout framework.
+* **`<menu-list>`** **: Container element.** *Accepts <menu-item>, <menu-list> and <span> (as separator) elements.*
+* **`<hamburger-button>`** **: Responsive trigger element.**
+* **`<flex-menu>`** **: The top-level responsive layout framework**.** **: Base presentation element utilizing the styling mixin pipeline.**
 
 ---
 

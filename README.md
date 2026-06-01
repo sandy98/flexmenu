@@ -80,3 +80,7 @@ Custom Events Emitted
   javascript
 
   ``{       target: HTMLElement, // The specific menu-item instance       type: 'click',       srcEvent:      MouseEvent // Native mouse click details     }``
+
+## Demo
+
+[Assorted menus](https://sandy98/github..com/flexmenu)

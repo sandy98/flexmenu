@@ -4,11 +4,11 @@ Menu web component with built-in flexibility to accommodate itself to mobile scr
 
 **Provided Components**
 
-* **`<color-label>`** **: Base presentation element utilizing the styling mixin pipeline.**
-* **`<menu-item>`** **: Clickable, navigation-ready component designed to live inside menus.**
-* **`<menu-list>`** **: Container element.** *Accepts <menu-item>, <menu-list> and <span> (as separator) elements.*
-* **`<hamburger-button>`** **: Responsive trigger element.**
-* **`<flex-menu>`** **: The top-level responsive layout framework**.** **: Base presentation element utilizing the styling mixin pipeline.**
+* **`<color-label>`: Base presentation element utilizing the styling mixin pipeline.**
+* **`<menu-item>`: Clickable, navigation-ready component designed to live inside menus.**
+* **`<menu-list>`: Container element.** *Accepts `<menu-item>`, `<menu-list>` and `<span>` (as separator) elements.*
+* **`<hamburger-button>`: Responsive trigger element.**
+* **`<flex-menu>`: The top-level responsive layout framework**.** **: Base presentation element utilizing the styling mixin pipeline.**
 
 ---
 
@@ -27,7 +27,6 @@ Pass these as HTML attributes or set them in JS. The component dynamically trans
 | `sel-color`  | `selColor` | `rgb(190, 252, 190)` | Selected state background color |
 
 ---
-
 
 Component Reference
 
@@ -51,7 +50,6 @@ Properties & Methods
 * **`toggleSelected()`** **: Reverses the current selection state.**
 
 ---
-
 
 2. `<menu-item>`
 
@@ -81,4 +79,4 @@ Custom Events Emitted
 * **`event.detail` structure** **:**
   javascript
 
-    ``{       target: HTMLElement, // The specific menu-item instance       type: 'click',       srcEvent:      MouseEvent // Native mouse click details     }``
+  ``{       target: HTMLElement, // The specific menu-item instance       type: 'click',       srcEvent:      MouseEvent // Native mouse click details     }``

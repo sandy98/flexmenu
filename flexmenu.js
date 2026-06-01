@@ -1,6 +1,4 @@
 
-(function init() {
-
 const baseStyle = `
     <style>
         :host {
@@ -120,7 +118,7 @@ const ColorMixin = function(elementType = HTMLElement) {
 };
 
 // const ColorLabel = ColorMixin();
-class ColorLabel extends ColorMixin() {}
+export class ColorLabel extends ColorMixin() {}
 
 window.customElements.define('color-label', ColorLabel);
 
@@ -156,7 +154,7 @@ const menuItemStyle = `
     </style>
 `;
 
-class MenuItem extends ColorMixin() {
+export class MenuItem extends ColorMixin() {
 
         constructor() {
             super();
@@ -358,7 +356,7 @@ function menuListHtml(menuTitle = "MENU-LIST") {
     `;
 }
 
-class MenuList extends ColorMixin() {
+export class MenuList extends ColorMixin() {
     constructor() {
         super();
         this._menuTitle = this.tagName;
@@ -429,7 +427,7 @@ function mainMenuHtml() {
     `;
 }
 
-class MainMenu extends MenuList {
+export class MainMenu extends MenuList {
     connectedCallback() {
         // this.shadowRoot.innerHTML = `${menuListStyle}${mainMenuStyle}${mainMenuHtml()}`;
         this.shadowRoot.innerHTML = `${mainMenuStyle}${mainMenuHtml()}`;
@@ -527,7 +525,7 @@ function hamburgerHtml() {
     `;
 }
 
-class HamburgerButton extends ColorMixin() {
+export class HamburgerButton extends ColorMixin() {
     constructor() {
         super();
         this.boundClick = this.onClick.bind(this);
@@ -650,7 +648,7 @@ function flexMenuHtml() {
     `;
 }
 
-class FlexMenu extends ColorMixin() {
+export class FlexMenu extends ColorMixin() {
     constructor() {
         super();
     }
@@ -663,4 +661,4 @@ class FlexMenu extends ColorMixin() {
 
 window.customElements.define('flex-menu', FlexMenu);
 
-})();
+//

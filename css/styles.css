@@ -1,0 +1,122 @@
+:root {
+    font-size: 16px;
+    --fg-color: aliceblue;
+    --bg-color: steelblue;
+    --selected-color: lightgreen;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: flex-start;
+    align-items: left;
+    background: steelblue;
+    width: fit-content;
+    @media screen and (orientation: landscape)  {
+        /* header { */
+            flex-direction: row;
+            align-items: center;
+        /* } */
+    }
+}
+
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: top;
+    flex-wrap: nowrap;
+    background-color: transparent;
+    gap: 1px;
+    color: aliceblue;
+    height: calc(10px + 1.6rem);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+nav li {
+    text-decoration: none;
+    list-style-type: none;
+    cursor: pointer;
+    width: fit-content;
+}
+
+p {
+    margin-left: 0.5rem;
+}
+
+.lightgreen {
+    background-color: rgb(190, 252, 190);
+    color: black;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    gap: 0;
+    margin: 1rem 3rem auto;
+}
+
+.title-header {
+    text-align: center;
+    font-weight: bold;
+    user-select: none;
+}
+
+.selected {
+    background-color: maroon;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: flex-start;
+    gap: 0;
+    margin: 1rem 1rem auto;
+}
+
+.row {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    padding: 0.3rem;
+    border: solid 1px;
+    border-radius: 5px;
+    margin: 1rem 1rem auto;
+}
+
+.blue {
+    background-color: steelblue;
+    color: white;
+}
+
+.purple {
+    background-color: purple;
+    color: white;
+}
+
+.big {
+    font-size: 120%;
+}
+
+.cornered {
+    border-radius: 5px;
+    padding: 10px;
+}

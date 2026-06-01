@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Flexible Menu Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!--[if lt IE 9]><script src="js/html5shiv-printshiv.js" media="all"></script><![endif]-->
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <script src="/js/flexmenu.js"></script>
+</head>
+<body>
+    <!-- <hamburger-button></hamburger-button> -->
+    <flex-menu bg-color="teal">
+      <!-- <nav> -->
+        <menu-list menu-title="Sites">
+            <div>Viva Perón!</div>        
+            <menu-item use-default-handler href="#home">Home</menu-item>
+            <div>River Plate, el más grande, lejos!</div>        
+            <menu-item use-default-handler href="#contact">Contact</menu-item>
+            <span></span>
+            <menu-item use-default-handler href="#about">About</menu-item>
+        </menu-list>
+        <menu-list menu-title="Teams">
+            <menu-item use-default-handler href="#river">River Plate</menu-item>
+            <menu-item use-default-handler href="#boca">Boca Juniors</menu-item>
+            <menu-item use-default-handler href="#racing">Racing Club</menu-item>
+            <span></span>
+            <menu-list menu-title="2nd Division">
+                <menu-item use-default-handler href="#centralCordoba">Central Cordoba</menu-item>
+                <menu-item use-default-handler href="#argentino">Argentino</menu-item>
+                <menu-item use-default-handler href="#leonesRosario">Leones Rosario</menu-item>
+            </menu-list>
+        </menu-list>
+      <!-- </nav> -->
+    </flex-menu>
+    <div class="main">
+        <!-- <div class="stack"> -->
+        <!-- </div> -->
+        <hr>
+        <h3 class="title-header">
+            Flexible Menu Test Page
+        </h3>
+        <hr>
+        <!-- <p>
+            <button>Toggle Menu Item</button>
+        </p> -->
+        <div class="row centered">
+            <label for="loc-hash">Location: </label>
+            <span class="purple big cornered" id="loc-hash"></span>
+        </div>
+    </div>
+    <script src="/js/index.js"></script>
+</body>
+</html>

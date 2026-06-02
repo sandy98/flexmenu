@@ -10,11 +10,22 @@ document.addEventListener("DOMContentLoaded", () => {
     hambutton?.addEventListener('hamburger-toggle', () => console.info(`Hamburger toggled: ${hambutton.isopen ? "open" : "closed"}`));
     menuitems.forEach(mi => mi.addEventListener('click', ev => {
         console.info(`Click on '${ev.currentTarget.textContent}'`);
-        location.hash = ev.currentTarget.getAttribute('href');
+        const href = ev.currentTarget.getAttribute('href');
+        if (!href.startsWith('#all')) { 
+            location.hash = href;
+        } else {
+            if (href === '#all') {
+                showAllTemplates();
+            }
+        }
         menuitems.forEach(item => item.unselect());
         ev.currentTarget.select();
     }));
     const hashChange = () => {
+        if (location.hash === '#all') {
+            showAllTemplates();
+            return;
+        }
         const template = document.querySelector(location.hash) ? document.querySelector(location.hash) : null;
         if (template) {
             maincontent.innerHTML = '';
@@ -27,6 +38,25 @@ document.addEventListener("DOMContentLoaded", () => {
             menuitems.forEach(item => item.unselect());
             selectedMenuItem.select();
         }  
+    };
+    const showAllTemplates = () => {
+        // alert("Showing all documentation together.");
+        maincontent.innerHTML = '';
+        const items = document.querySelectorAll('menu-list[menu-title="Docs"] menu-item:not([href="#all"])');
+        let templatesToShow = [];
+        items.forEach(item => {
+            const href = item.getAttribute('href');
+            const template = document.querySelector(href);
+            if (template) {
+                templatesToShow.push(template);
+            }
+        });
+        templatesToShow.forEach(template => {
+            const section = document.createElement('section');
+            section.appendChild(template.content.cloneNode(true));
+            maincontent.appendChild(section);
+        });
+        location.hash = '#all';
     };
 
     window.addEventListener('hashchange', hashChange);

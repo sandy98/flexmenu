@@ -6,4 +6,6 @@ index.js
 styles.css
 .clj-kondo/
 .lsp/
+.virtual-env/
+
 

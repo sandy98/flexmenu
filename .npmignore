@@ -3,3 +3,7 @@ runserver.py
 favicon.ico
 index.html
 index.js
+styles.css
+.clj-kondo/
+.lsp/
+

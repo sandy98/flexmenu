@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }));
     const hashChange = () => {
         if (location.hash === '#all') {
+            document.querySelector('menu-item[href="#all"]').select();
             showAllTemplates();
             return;
         }

@@ -621,6 +621,9 @@ const flexMenuStyle = `
             top: 0;
             right: 0;
             z-index: 100;
+            @media screen and (orientation: landscape) {
+                display: none;
+            }
         }
         .wrapper main-menu {
             position: fixed;

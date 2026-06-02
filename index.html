@@ -8,48 +8,39 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <script src="flexmenu.js" type="module"></script>
+    <script src="index.js"></script>
 </head>
 <body>
-    <!-- <hamburger-button></hamburger-button> -->
+    <template id="home">
+        <h3>Welcome to the Flexible Menu Demo!</h3>
+        <p>This is the home page. Use the menu to navigate.</p>
+    </template>
+    <template id="about">
+        <h3>About the Flexible Menu</h3>
+        <p>This is the about page. Learn more about the flexible menu.</p>
+    </template>
+    <template id="getting-started">
+        <h3>Getting Started</h3>
+        <p>Here's how to get started with the flexible menu.</p>
+    </template>
     <flex-menu id="test-elem" bg-color="teal">
-      <!-- <nav> -->
-        <menu-item use-default-handler href="#tintagel">Tintagel</menu-item>
-        <menu-list menu-title="Sites">
-            <menu-item use-default-handler href="#home">Home</menu-item>
-            <div>River Plate, el más grande, lejos!</div>        
-            <menu-item use-default-handler href="#contact">Contact</menu-item>
+        <color-label>
+            <img src="favicon.ico" alt="Favicon" />
+            <span style="color: cyan">&nbsp;Flexible Menu</span>
+        </color-label> 
+        <!-- <div style="color: white; padding-left: 10px; padding-right: 10px; text-align: center;">Viva River!</div> -->
+        <menu-item href="#home">Home</menu-item>
+        <menu-list menu-title="Docs">
+            <menu-item href="#getting-started">Getting Started</menu-item>
             <span></span>
-            <menu-item use-default-handler href="#about">About</menu-item>
+            <menu-item href="#color-label">Color Label Docs </menu-item>
+            <menu-item href="#menu-item">Menu Item Docs </menu-item>
         </menu-list>
-        <menu-list menu-title="Teams">
-            <menu-item use-default-handler href="#river">River Plate</menu-item>
-            <menu-item use-default-handler href="#boca">Boca Juniors</menu-item>
-            <menu-item use-default-handler href="#racing">Racing Club</menu-item>
-            <span></span>
-            <menu-list menu-title="2nd Division">
-                <menu-item use-default-handler href="#centralCordoba">Central Cordoba</menu-item>
-                <menu-item use-default-handler href="#argentino">Argentino</menu-item>
-                <menu-item use-default-handler href="#leonesRosario">Leones Rosario</menu-item>
-            </menu-list>
-        </menu-list>
-      <!-- </nav> -->
+        <menu-item href="#about">About</menu-item>   
     </flex-menu>
     <div class="main">
-        <!-- <div class="stack"> -->
-        <!-- </div> -->
-        <hr>
-        <h3 class="title-header">
-            Flexible Menu Test Page
-        </h3>
-        <hr>
-        <!-- <p>
-            <button>Toggle Menu Item</button>
-        </p> -->
-        <div class="row centered">
-            <label for="loc-hash">Location: </label>
-            <span class="purple big cornered" id="loc-hash"></span>
-        </div>
+        <h2 class="title-header">Flexible Menu Test</h2>
+        <hr />
     </div>
-    <script src="index.js"></script>
 </body>
 </html>

@@ -1,21 +1,27 @@
 
-let flexmenu, hambutton;
+let flexmenu, hambutton, menuitems, maincontent;
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Document loaded.");
     flexmenu = document.querySelector('#test-elem');
     hambutton = flexmenu?.shadowRoot.querySelector('hamburger-button');
-    menuitem = document.querySelectorAll('menu-item')[0];
+    menuitems = document.querySelectorAll('menu-item');
+    maincontent = document.querySelector('.main');
     hambutton?.addEventListener('hamburger-toggle', () => console.info(`Hamburger toggled: ${hambutton.isopen ? "open" : "closed"}`));
-    document.querySelectorAll('menu-item').forEach(mi => mi.addEventListener('click', ev => {
+    menuitems.forEach(mi => mi.addEventListener('click', ev => {
         console.info(`Click on '${ev.currentTarget.textContent}'`);
+        location.hash = ev.currentTarget.getAttribute('href');
+        menuitems.forEach(item => item.unselect());
+        ev.currentTarget.select();
     }));
     const hashChange = () => {
-        const content = location.hash.length > 1 ? 
-            `${location.hash[1].toUpperCase()}${location.hash.slice(2)}` : "#";
-        document.querySelector('#loc-hash').textContent = content;
-        // document.querySelector('menu-item').unselect();
-        // if (content === "#") document.querySelectorAll('menu-item').forEach(mi => mi.unselect());
+        const template = document.querySelector(location.hash) ? document.querySelector(location.hash) : null;
+        if (template) {
+            maincontent.innerHTML = '';
+            maincontent.appendChild(template.content.cloneNode(true));
+        } else {
+            maincontent.innerHTML = `<h3><span class="fgred bold">404&nbsp;</span>Content not found for: <span class="fgred bold">${location.hash.slice(1)}</span></h3>`;
+        }   
     };
 
     window.addEventListener('hashchange', hashChange);

@@ -62,13 +62,17 @@ p {
     color: black;
 }
 
+.fgred {
+    color: red;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    align-items: center;
-    gap: 0;
-    margin: 1rem 3rem auto;
+    display: block;
+    margin: 2.5rem 1rem auto;
 }
 
 .title-header {

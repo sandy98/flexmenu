@@ -1,6 +1,6 @@
 {
   "name": "@esavoretti/flexmenu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Menu web component with built-in flexibility to accommodate itself to mobile screens",
   "main": "flexmenu.js",
   "type": "module",

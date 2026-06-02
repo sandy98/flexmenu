@@ -3,10 +3,10 @@ let flexmenu, hambutton;
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Document loaded.");
-    flexmenu = document.querySelector('flex-menu');
-    hambutton = flexmenu.shadowRoot.querySelector('hamburger-button');
+    flexmenu = document.querySelector('#test-elem');
+    hambutton = flexmenu?.shadowRoot.querySelector('hamburger-button');
     menuitem = document.querySelectorAll('menu-item')[0];
-    hambutton.addEventListener('hamburger-toggle', () => console.info(`Hamburger toggled: ${hambutton.isopen ? "open" : "closed"}`));
+    hambutton?.addEventListener('hamburger-toggle', () => console.info(`Hamburger toggled: ${hambutton.isopen ? "open" : "closed"}`));
     document.querySelectorAll('menu-item').forEach(mi => mi.addEventListener('click', ev => {
         console.info(`Click on '${ev.currentTarget.textContent}'`);
     }));

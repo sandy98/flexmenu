@@ -20,7 +20,7 @@ const baseStyle = `
             position: relative;
             display: flex;
             width: 100%;
-            height: 100%;
+            /* height: 100%; */
             justify-content: center;
             align-items: center;
             /* gap: 0.5rem; */
@@ -277,7 +277,7 @@ const menuListStyle = `
 
         .wrapper color-label {
             cursor: pointer;
-            border-bottom: solid 1px var(--fg-color, aliceblue);
+            /* border-bottom: solid 1px var(--fg-color, aliceblue); */
         }
 
         .wrapper color-label::after {
@@ -300,7 +300,6 @@ const menuListStyle = `
         .item-container {
             margin: 0;
             position: absolute;
-            /*top: calc(1.5rem + 1px); */
             top: 0;
             left: -100vw;
             display: flex;
@@ -318,8 +317,7 @@ const menuListStyle = `
             left: 99%;
             z-index: 10;
             @media screen and (orientation: landscape) {
-               /* top: calc(1.5rem + 1px); */
-                top: calc(1.5rem + 1px);
+                top: calc(1.5rem + 0px);
                 left: 0;
             } 
         }
@@ -456,18 +454,18 @@ window.customElements.define('main-menu', MainMenu);
 const hamburgerStyle = `
     <style>
         :host {
-            width: calc(1.5rem + 1px);
-            min-width: calc(1.5rem + 1px);
-            height: calc(1.5rem + 1px);
-            min-height: calc(1.5rem + 1px);
+            width: calc(1.5rem + 0px);
+            min-width: calc(1.5rem + 0px);
+            height: calc(1.5rem + 0px);
+            min-height: calc(1.5rem + 0px);
             color: var(--fg-color, aliceblue);
             background-color: var(--bg-color, steelblue);
         }   
         .wrapper {
-            width: calc(1.5rem + 1px);
-            min-width: calc(1.5rem + 1px);
-            height: calc(1.5rem + 1px);
-            min-height: calc(1.5rem + 1px);
+            width: calc(1.5rem + 0px);
+            min-width: calc(1.5rem + 0px);
+            height: calc(1.5rem + 0px);
+            min-height: calc(1.5rem + 0px);
             color: var(--fg-color, aliceblue);
             background-color: var(--bg-color, steelblue);
             flex-direction: column;
@@ -581,10 +579,10 @@ const flexMenuStyle = `
             top: 0;
             left: 0;
             z-index: 50;
-            width: 50vw;
-            min-width: 50vw;
-            height: calc(1.5rem + 1px);
-            min-height: calc(1.5rem + 1px);
+            width: 33vw;
+            min-width: 33vw;
+            height: calc(1.5rem +0px);
+            min-height: calc(1.5rem + 0px);
             color: var(--fg-color, aliceblue);
             background-color: transparent;
             @media screen and (orientation: landscape) {
@@ -602,7 +600,7 @@ const flexMenuStyle = `
             flex-direction: column;
             justify-content: flex-start;
             align-items: left;
-            width: 50vw;
+            width: 33vw;
             min-width: 10rem;
             height: 100%;
             /* color: var(--fg-color, aliceblue);
@@ -621,6 +619,7 @@ const flexMenuStyle = `
             top: 0;
             right: 0;
             z-index: 100;
+            display: inherit;
             @media screen and (orientation: landscape) {
                 display: none;
             }

@@ -2,12 +2,20 @@
   "name": "@esavoretti/flexmenu",
   "version": "1.0.3",
   "description": "Menu web component with built-in flexibility to accommodate itself to mobile screens",
+  "keywords": [
+    "web-components",
+    "custom-elements",
+    "flexmenu",
+    "responsive-menu",
+    "vanilla-js",
+    "mobile-menu",
+    "hamburger-menu"
+  ],
   "main": "flexmenu.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "Domingo E. Savoretti <esavoretti@gmail.com> (https://sandy98.github.io/flexmenu)",
   "repository": {
     "type": "git",

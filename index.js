@@ -21,7 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
             maincontent.appendChild(template.content.cloneNode(true));
         } else {
             maincontent.innerHTML = `<h3><span class="fgred bold">404&nbsp;</span>Content not found for: <span class="fgred bold">${location.hash.slice(1)}</span></h3>`;
-        }   
+        } 
+        const selectedMenuItem = document.querySelector(`menu-item[href="${location.hash}"]`);
+        if (selectedMenuItem) {
+            menuitems.forEach(item => item.unselect());
+            selectedMenuItem.select();
+        }  
     };
 
     window.addEventListener('hashchange', hashChange);

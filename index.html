@@ -21,7 +21,40 @@
     </template>
     <template id="getting-started">
         <h3>Getting Started</h3>
-        <p>Here's how to get started with the flexible menu.</p>
+        <p>
+            Let's begin with a classic example of the flexible menu, to demonstrate its capabilities by
+            outlining the navigation structure of the documentation for the flexible menu itself. 
+            The documentation is organized into several sections, each dedicated to a specific component of 
+            the flexible menu. You can navigate through these sections using the menu items below.
+        </p>
+        <p>
+            Here's a typical structure showing flex-menu as the main component, with color-label, menu-item, 
+            menu-list, main-menu, and hamburger-button as its subcomponents. 
+            Each of these components has its own documentation section that you can access through the menu.
+            <br />
+            <pre style="background-color: lightgray;"><code>
+                &lt;flex-menu&gt;
+                    &lt;menu-item&gt;
+                        Home
+                    &lt;/menu-item&gt;
+                    &lt;menu-list menu-title="Documentation"&gt;
+                        &lt;menu-item href="#getting-started"&gt;Getting Started&lt;/menu-item&gt;
+                        &lt;menu-separator&gt;&lt;/menu-separator&gt;
+                        &lt;menu-item href="#color-label"&gt;Color Label&lt;/menu-item&gt;
+                        &lt;menu-item href="#menu-item"&gt;Menu Item&lt;/menu-item&gt;
+                        &lt;menu-item href="#menu-list"&gt;Menu List&lt;/menu-item&gt;
+                        &lt;menu-item href="#main-menu"&gt;Main Menu&lt;/menu-item&gt;
+                        &lt;menu-item href="#hamburger-button"&gt;Hamburger Button&lt;/menu-item&gt;
+                    &lt;/menu-list&gt;
+                    &lt;menu-item href="#configuration"&gt;Configuration&lt;/menu-item&gt;
+                    &lt;menu-item href="#about"&gt;About&lt;/menu-item&gt;
+                &lt;/flex-menu&gt;
+            </code></pre>
+        </p>
+        <p>
+            The previous html code snippet illustrates how to structure the flexible menu with its various components. 
+            Each menu item corresponds to a section in the documentation, allowing you to easily navigate and learn
+        </p>
     </template>
     <template id="flex-menu">
         <h3>Flex Menu Documentation</h3>

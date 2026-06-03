@@ -8,7 +8,7 @@ Let's begin with a classic example of the flexible menu, to demonstrate its capa
 
 Here's a typical structure showing flex-menu as the main component, with color-label, menu-item, menu-list, main-menu, and hamburger-button as its subcomponents. Each of these components has its own documentation section that you can access through the menu.  
 
-        <flex-menu>
+    <flex-menu>
         <menu-item href="#home">
             Home
         </menu-item>

@@ -34,6 +34,9 @@ header {
     }
 }
 
+pre {
+    white-space: pre-wrap;
+}
 
 nav {
     display: flex;
@@ -72,6 +75,10 @@ p {
 
 .fgred {
     color: red;
+}
+
+a.fgblue {
+    color: steelblue;
 }
 
 .bold {

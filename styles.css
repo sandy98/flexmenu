@@ -10,9 +10,6 @@
     --bg-color: steelblue;
     --selected-color: lightgreen;
 
-    --background: steelblue;
-    --background-hover: aliceblue;
-    --menu-title: white;
     --selected: aqua;
 }
 
@@ -233,12 +230,24 @@ select:open::picker-icon {
 }
 
 button.bgbutton {
-    background: var(--background);
-    color: var(--menu-title);
+    background: var(--bg-color);
+    color: var(--fg-color);
     font-size: 1.2rem;
     padding: 10px;
     border-radius: 8px;
     margin: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button.bgbutton:hover {
+    background: var(--bg-color);
+    color: var(--fg-color);
+}
+
+button.bgbutton:active {
+    background: purple;
+    color: var(--fg-color);
 }
 
 @media  screen and (width>800px) {

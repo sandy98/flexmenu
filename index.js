@@ -155,15 +155,13 @@ const colours = {
 // const pageCache = {};
 
 function reset_colours() {
-    document.cookie = "--selected=;max-age=0";
-    document.cookie = "--background=;max-age=0";
-    document.cookie = "--menu-title=;max-age=0";
-    document.cookie = "--background-hover=;max-age=0";
+    document.cookie = "--sel-color=;max-age=0";
+    document.cookie = "--bg-color=;max-age=0";
+    document.cookie = "--fg-color=;max-age=0";
     setTimeout(() => {
-        document.documentElement.style.setProperty('--background', 'steelblue');
-        document.documentElement.style.setProperty('--background-hover', 'aliceblue');
-        document.documentElement.style.setProperty('--menu-title', 'white');
-        document.documentElement.style.setProperty('--selected', 'aqua');
+        flexmenu.setAttribute('sel-color', 'seagreen');
+        flexmenu.setAttribute('bg-color', 'steelblue');
+        flexmenu.setAttribute('fg-color', 'aliceblue');
         configuration_script();
     }, 10);
 }
@@ -189,27 +187,24 @@ function get_cookieobj() {
 function configuration_script() {
     const cookie_obj = get_cookieobj();
 
-    if (cookie_obj['--selected']) {
-        document.documentElement.style.setProperty('--selected', cookie_obj['--selected']);        
+    if (cookie_obj['--sel-color']) {
+        document.documentElement.style.setProperty('--sel-color', cookie_obj['--sel-color']);        
     }
 
-    if (cookie_obj['--background']) {
-        document.documentElement.style.setProperty('--background', cookie_obj['--background']);        
+    if (cookie_obj['--bg-color']) {
+        document.documentElement.style.setProperty('--bg-color', cookie_obj['--bg-color']);        
     }
 
-    if (cookie_obj['--menu-title']) {
-        document.documentElement.style.setProperty('--menu-title', cookie_obj['--menu-title']);        
+    if (cookie_obj['--fg-color']) {
+        document.documentElement.style.setProperty('--fg-color', cookie_obj['--fg-color']);        
     }
 
-    if (cookie_obj['--background-hover']) {
-        document.documentElement.style.setProperty('--background-hover', cookie_obj['--background-hover']);        
-    }
 
     const styles = getComputedStyle(document.documentElement);
-    const selectedColour = styles.getPropertyValue('--selected');
-    const backgroundColour = styles.getPropertyValue('--background');
-    const menuTitle = styles.getPropertyValue('--menu-title');
-    const backgroundHover = styles.getPropertyValue('--background-hover');
+    const selectedColour = styles.getPropertyValue('--sel-color');
+    const backgroundColour = styles.getPropertyValue('--bg-color');
+    const menuTitle = styles.getPropertyValue('--fg-color');
+    const backgroundHover = styles.getPropertyValue('--sel-color');
 
     const cboHeaderFooterBackground = document.querySelector('#cbo-header-footer-background');
     // const cboSelectedColour = document.querySelector('#cbo-selected-item');
@@ -241,13 +236,12 @@ function configuration_script() {
             }
 
             cbo.addEventListener('change', ev => {
-                // document.documentElement.style.setProperty(property, ev.target.value);
-                // document.cookie = `${property}=${ev.target.value};max-age=60*60*24*30`;
-                console.log('Setting property', property, 'to value', ev.target.value);
-                if (property.startsWith('--')) {
-                    property = property.slice(2);
-                }
-                flexmenu.setAttribute(property, ev.target.value);
+                document.cookie = `${property}=${ev.target.value};max-age=60*60*24*30`;
+                // console.log('Setting property', property, 'to value', ev.target.value);
+                let strippedProp = property.replace('--', '');
+                flexmenu.setAttribute(strippedProp, ev.target.value);
+                document.documentElement.style.setProperty(property, ev.target.value);
+                document.cookie = `${property}=${ev.target.value};max-age=60*60*24*30`;
             })
         });
     }

@@ -48,6 +48,45 @@
         <p>This section provides documentation for the hamburger button component.</p>
     </template>
 
+    <template id="configuration">
+        <h3 style="padding: 2rem; color: red;">
+            You can choose here colours for various elements of the screen.
+        </h3>
+        <div class="pagina">
+            <div  class="renglon">
+                <label for="cbo-menu-text-colour">Menu text colour</label>
+                <select id="cbo-menu-text-colour">
+                    <button><selectedcontent></selectedcontent></button>
+                </select>
+            </div>
+
+            <div  class="renglon">
+                <label for="cbo-header-footer-background">Menu background colour</label>
+                <select id="cbo-header-footer-background">
+                    <button><selectedcontent></selectedcontent></button>
+                </select>
+            </div>
+
+            <div  class="renglon">
+                <label for="cbo-menu-background-colour">Menu selected  background colour</label>
+                <select id="cbo-menu-background-colour">
+                    <button><selectedcontent></selectedcontent></button>
+                </select>
+            </div>
+
+            <!-- <div class="renglon">
+                <label for="cbo-selected-item">Selected item colour</label>
+                <select id="cbo-selected-item">
+                    <button><selectedcontent></selectedcontent></button>
+                </select>
+            </div> -->
+
+            <div style="text-align: center; margin-bottom: 0.5rem;">
+                <button onclick="reset_colours();" class="bgbutton">Reset all colours to default values</button>
+            </div>
+        </div>
+    </template>
+
     <flex-menu id="test-elem" bg-color="seagreen">
         <color-label>
             <img src="favicon.ico" alt="Favicon" />
@@ -67,6 +106,7 @@
             <span></span>
             <menu-item href="#all">All docs together</menu-item>
         </menu-list>
+        <menu-item href="#configuration">Configuration</menu-item>
         <menu-item href="#about">About</menu-item>   
     </flex-menu>
     <div class="main">

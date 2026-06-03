@@ -1,3 +1,18 @@
+export class MenuSeparator extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({mode: 'open'});
+    }
+
+    connectedCallback() {
+        this.shadowRoot.innerHTML = `
+        <span></span>
+        `
+    }
+}
+
+window.customElements.define('menu-separator', MenuSeparator);
+
 
 const baseStyle = `
     <style>
@@ -328,7 +343,7 @@ const menuListStyle = `
             display: inherit;
             padding: 5px;
         }
-        ::slotted(span) {
+        ::slotted(menu-separator) {
             content: "";
             display: inline-block;
             background-color: var(--fg-color);

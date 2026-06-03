@@ -8,24 +8,23 @@ Let's begin with a classic example of the flexible menu, to demonstrate its capa
 
 Here's a typical structure showing flex-menu as the main component, with color-label, menu-item, menu-list, main-menu, and hamburger-button as its subcomponents. Each of these components has its own documentation section that you can access through the menu.  
 
-    
-                    <flex-menu>
-                        <menu-item href="#home">
-                            Home
-                        </menu-item>
-                        <menu-list menu-title="Documentation">
-                            <menu-item href="#getting-started">Getting Started</menu-item>
-                            <menu-separator></menu-separator>
-                            <menu-item href="#color-label">Color Label</menu-item>
-                            <menu-item href="#menu-item">Menu Item</menu-item>
-                            <menu-item href="#menu-list">Menu List</menu-item>
-                            <menu-item href="#main-menu">Main Menu</menu-item>
-                            <menu-item href="#hamburger-button">Hamburger Button</menu-item>
-                        </menu-list>
-                        <menu-item href="#configuration">Configuration</menu-item>
-                        <menu-item href="#about">About</menu-item>
-                    </flex-menu>
-                
+        <flex-menu>
+        <menu-item href="#home">
+            Home
+        </menu-item>
+        <menu-list menu-title="Documentation">
+            <menu-item href="#getting-started">Getting Started</menu-item>
+            <menu-separator></menu-separator>
+            <menu-item href="#color-label">Color Label</menu-item>
+            <menu-item href="#menu-item">Menu Item</menu-item>
+            <menu-item href="#menu-list">Menu List</menu-item>
+            <menu-item href="#main-menu">Main Menu</menu-item>
+            <menu-item href="#hamburger-button">Hamburger Button</menu-item>
+        </menu-list>
+        <menu-item href="#configuration">Configuration</menu-item>
+        <menu-item href="#about">About</menu-item>
+    </flex-menu>
+
 
 The previous html code snippet illustrates how to structure the flexible menu with its various components. Each menu item corresponds to a section in the documentation, allowing you to easily navigate and learn
 

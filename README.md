@@ -36,7 +36,7 @@ The previous html code snippet illustrates how to structure the flexible menu wi
 * **`<menu-item>`: Clickable, navigation-ready component designed to live inside menus.**
 * **`<menu-list>`: Container element.** *Accepts `<menu-item>`, `<menu-list>` and `<span>` (as separator) elements.*
 * **`<hamburger-button>`: Responsive trigger element.**
-* **`<flex-menu>`: The top-level responsive layout framework**.** **: Base presentation element utilizing the styling mixin pipeline.**
+* **`<flex-menu>`: The top-level responsive layout framework**. **: Base presentation element utilizing the styling mixin pipeline.**
 
 ---
 

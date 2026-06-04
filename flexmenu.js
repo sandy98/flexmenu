@@ -362,6 +362,7 @@ function menuListHtml(menuTitle = "MENU-LIST") {
     <div class="wrapper">
         <color-label>${menuTitle}</color-label>
         <div class="item-container">
+            <menu-separator></menu-separator>
             <slot></slot>
         </div>
     </div>

@@ -6,29 +6,51 @@ Menu web component with built-in flexibility to accommodate itself to mobile scr
 
 Let's begin with a classic example of the flexible menu, to demonstrate its capabilities by outlining the navigation structure of the documentation for the flexible menu itself. The documentation is organized into several sections, each dedicated to a specific component of the flexible menu. You can navigate through these sections using the menu items below.
 
+### I. Installation
+
+The fastest way to get started with the flexible menu is to include the flexmenu.js script in your HTML file, like so:
+
+    <script src="https://unpkg.com/@esavoretti/flexmenu" type="module"></script>
+
+or
+
+    <script type="module" src="https://cdn.jsdelivr.net/gh/sandy98/flexmenu/flexmenu.js"></script>
+
+Of course, you can also download the flexmenu.js file and include it locally in your project. This includes intalling it via
+
+     npm install @esavoretti/flexmenu 
+
+and then copying it to your project folder and including it with a relative path, like so:
+
+    <script src="path/to/flexmenu.js" type="module"></script>
+
+  
+In any case, always keep in mind that the flexmenu.js script must be included with the type="module" attribute, as it uses ES6 module syntax.
+
+### II. Usage
+
 Here's a typical structure showing flex-menu as the main component, with color-label, menu-item, menu-list, main-menu, and hamburger-button as its subcomponents. Each of these components has its own documentation section that you can access through the menu.  
 
-    <flex-menu>
-        <menu-item href="#home">
-            Home
-        </menu-item>
-        <menu-list menu-title="Documentation">
-            <menu-item href="#getting-started">Getting Started</menu-item>
-            <menu-separator></menu-separator>
-            <menu-item href="#color-label">Color Label</menu-item>
-            <menu-item href="#menu-item">Menu Item</menu-item>
-            <menu-item href="#menu-list">Menu List</menu-item>
-            <menu-item href="#main-menu">Main Menu</menu-item>
-            <menu-item href="#hamburger-button">Hamburger Button</menu-item>
-        </menu-list>
-        <menu-item href="#configuration">Configuration</menu-item>
-        <menu-item href="#about">About</menu-item>
-    </flex-menu>
-
+    
+                    <flex-menu>
+                        <menu-item>
+                            Home
+                        </menu-item>
+                        <menu-list menu-title="Documentation">
+                            <menu-item href="#getting-started">Getting Started</menu-item>
+                            <menu-separator></menu-separator>
+                            <menu-item href="#color-label">Color Label</menu-item>
+                            <menu-item href="#menu-item">Menu Item</menu-item>
+                            <menu-item href="#menu-list">Menu List</menu-item>
+                            <menu-item href="#main-menu">Main Menu</menu-item>
+                            <menu-item href="#hamburger-button">Hamburger Button</menu-item>
+                        </menu-list>
+                        <menu-item href="#configuration">Configuration</menu-item>
+                        <menu-item href="#about">About</menu-item>
+                    </flex-menu>
+                
 
 The previous html code snippet illustrates how to structure the flexible menu with its various components. Each menu item corresponds to a section in the documentation, allowing you to easily navigate and learn
-
-
 
 **Provided Components**
 

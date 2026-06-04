@@ -31,11 +31,26 @@
             the flexible menu. You can navigate through these sections using the menu items below.
         </p>
         <p>
+            <h3>I. Installation</h3>
+            <p>
+                The fastest way to get started with the flexible menu is to include the flexmenu.js script in your HTML file, like so:
+                <pre><code>&lt;script src="https://unpkg.com/@esavoretti/flexmenu" type="module"&gt;&lt;/script&gt;</code></pre>
+                or
+                <pre><code>&lt;script type="module" src="https://cdn.jsdelivr.net/gh/sandy98/flexmenu/flexmenu.js"&gt;&lt;/script&gt;</code></pre>
+                Of course, you can also download the flexmenu.js file and include it locally in your project.
+                This includes intalling it via <pre><code> npm install @esavoretti/flexmenu </code></pre> and
+                then copying it to your project folder and including it with a relative path, like so:
+                <pre><code>&lt;script src="path/to/flexmenu.js" type="module"&gt;&lt;/script&gt;</code></pre><br />
+                In any case, always keep in mind that the flexmenu.js script must be included with the type="module" attribute, as it uses ES6 module syntax.
+            </p>
+        </p>
+        <h3>II. Usage</h3>
+        <p>
             Here's a typical structure showing flex-menu as the main component, with color-label, menu-item, 
             menu-list, main-menu, and hamburger-button as its subcomponents. 
             Each of these components has its own documentation section that you can access through the menu.
             <br />
-            <pre style="background-color: lightgray;"><code>
+            <pre><code>
                 &lt;flex-menu&gt;
                     &lt;menu-item&gt;
                         Home

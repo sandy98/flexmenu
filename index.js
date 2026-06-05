@@ -159,10 +159,10 @@ function reset_colours() {
     document.cookie = "--bg-color=;max-age=0";
     document.cookie = "--fg-color=;max-age=0";
     setTimeout(() => {
-        flexmenu.setAttribute('sel-color', 'seagreen');
+        flexmenu.setAttribute('sel-color', 'acquamarine');
         flexmenu.setAttribute('bg-color', 'steelblue');
         flexmenu.setAttribute('fg-color', 'aliceblue');
-        document.documentElement.style.setProperty('--sel-color', 'seagreen');
+        document.documentElement.style.setProperty('--sel-color', 'acquamarine');
         document.documentElement.style.setProperty('--bg-color', 'steelblue');
         document.documentElement.style.setProperty('--fg-color', 'aliceblue');
         config();
@@ -203,7 +203,7 @@ function config() {
     }
 
     if (flexmenu) {
-        flexmenu.setAttribute('sel-color', cookie_obj['--sel-color'] || 'seagreen');
+        flexmenu.setAttribute('sel-color', cookie_obj['--sel-color'] || 'acquamarine');
         flexmenu.setAttribute('bg-color', cookie_obj['--bg-color'] || 'steelblue');
         flexmenu.setAttribute('fg-color', cookie_obj['--fg-color'] || 'aliceblue');
     }
@@ -281,16 +281,26 @@ document.addEventListener("DOMContentLoaded", () => {
         ev.currentTarget.select();
     }));
     const hashChange = () => {
-        if (!location.hash) {
-            location.hash = '#home';
-            return;
+        let hash = location.hash;
+        if (!hash) {
+            hash = '#home';
         }
-        if (location.hash === '#all') {
+        if (hash === '#all') {
             document.querySelector('menu-item[href="#all"]').select();
             showAllTemplates();
             return;
         }
-        const template = document.querySelector(location.hash) ? document.querySelector(location.hash) : null;
+        if (hash === '#configuration') {
+            const configElement = document.querySelector('#configuration');
+            maincontent.innerHTML = '';
+            if (configElement) {
+                maincontent.appendChild(configElement.content.cloneNode(true));
+                config();
+            }
+            return;
+        }
+
+        const template = document.querySelector(hash) ? document.querySelector(hash) : null;
         if (template) {
             maincontent.innerHTML = '';
             maincontent.appendChild(template.content.cloneNode(true));
@@ -328,4 +338,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener('hashchange', hashChange);
     hashChange();
+    config();
 });

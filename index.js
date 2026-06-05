@@ -155,9 +155,10 @@ let flexmenu, hambutton, menuitems, maincontent;
 
 
 function reset_colours() {
-    document.cookie = "--sel-color=;max-age=0";
-    document.cookie = "--bg-color=;max-age=0";
-    document.cookie = "--fg-color=;max-age=0";
+
+    document.cookie = `--sel-color=acquamarine;max-age=60*60*24*30`;
+    document.cookie = `--bg-color=steelblue;max-age=60*60*24*30`;
+    document.cookie = `--fg-color=aliceblue;max-age=60*60*24*30`;
     setTimeout(() => {
         flexmenu.setAttribute('sel-color', 'acquamarine');
         flexmenu.setAttribute('bg-color', 'steelblue');
@@ -165,7 +166,12 @@ function reset_colours() {
         document.documentElement.style.setProperty('--sel-color', 'acquamarine');
         document.documentElement.style.setProperty('--bg-color', 'steelblue');
         document.documentElement.style.setProperty('--fg-color', 'aliceblue');
-        config();
+        const choices = ['cbo-menu-text-colour', 
+        'cbo-header-footer-background', 
+        'cbo-menu-background-colour'];
+        document.querySelector(`#${choices[0]}`).value = colours['aliceblue'];
+        document.querySelector(`#${choices[1]}`).value = colours['steelblue'];
+        document.querySelector(`#${choices[2]}`).value = colours['aquamarine'];
     }, 10);
 }
 

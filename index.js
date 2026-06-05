@@ -151,8 +151,8 @@ const colours = {
   "yellowgreen": "#9acd32"
 }
 
+let flexmenu, hambutton, menuitems, maincontent;
 
-// const pageCache = {};
 
 function reset_colours() {
     document.cookie = "--sel-color=;max-age=0";
@@ -162,7 +162,10 @@ function reset_colours() {
         flexmenu.setAttribute('sel-color', 'seagreen');
         flexmenu.setAttribute('bg-color', 'steelblue');
         flexmenu.setAttribute('fg-color', 'aliceblue');
-        configuration_script();
+        document.documentElement.style.setProperty('--sel-color', 'seagreen');
+        document.documentElement.style.setProperty('--bg-color', 'steelblue');
+        document.documentElement.style.setProperty('--fg-color', 'aliceblue');
+        config();
     }, 10);
 }
 
@@ -184,7 +187,7 @@ function get_cookieobj() {
     return obj;
 }
 
-function configuration_script() {
+function config() {
     const cookie_obj = get_cookieobj();
 
     if (cookie_obj['--sel-color']) {
@@ -199,6 +202,11 @@ function configuration_script() {
         document.documentElement.style.setProperty('--fg-color', cookie_obj['--fg-color']);        
     }
 
+    if (flexmenu) {
+        flexmenu.setAttribute('sel-color', cookie_obj['--sel-color'] || 'seagreen');
+        flexmenu.setAttribute('bg-color', cookie_obj['--bg-color'] || 'steelblue');
+        flexmenu.setAttribute('fg-color', cookie_obj['--fg-color'] || 'aliceblue');
+    }
 
     const styles = getComputedStyle(document.documentElement);
     const selectedColour = styles.getPropertyValue('--sel-color');
@@ -247,109 +255,10 @@ function configuration_script() {
     }
 }
 
-// function executeScripts(container) {
-//   const scripts = container.querySelectorAll("script");
-
-//   try {
-//     scripts.forEach(oldScript => {
-//         const newScript = document.createElement("script");
-//             // Copy attributes (src, type, etc.)
-//             for (const attr of oldScript.attributes) {
-//             newScript.setAttribute(attr.name, attr.value);
-//             }
-
-//             // Copy inline script content
-//             newScript.textContent = oldScript.textContent;
-//             oldScript.replaceWith(newScript);
-//     });
-//   }
-//   catch(e) {
-//         console.log(e);
-//   }
-// }
-
-// async function show_content (whatpage) {
-//     const dyntag = document.querySelector("div.dynamic-content");
-//     const page = (whatpage || "home").toLowerCase();
-//     if (page in pageCache) {
-//         console.log('Cache hit!');
-//         dyntag.innerHTML = pageCache[page];
-//     } else {
-//         await load_content(page);
-//         // if (page !== 'about') {
-//             pageCache[page] = dyntag.innerHTML;
-//         // }
-//     }
-//     // if (page === 'configuration') {
-//         // alert("Gonna execute configuration_script()");
-//     configuration_script();
-//     // }
-// }
-
-// async function load_content (whatpage) {
-//     const page = (whatpage || "home").toLowerCase();
-//     if (page == 'index') {
-// 	return location.href = "https://sandyrosario.sytes.net/mysite";
-//     }
-//     const dyntag = document.querySelector("div.dynamic-content");
-//     dyntag.innerHTML = "Loading...";
-//     const response = await fetch(`${page}.html`);
-//     if (!response.ok) {
-// 	dyntag.innerHTML = `<p><strong style="color: red;">${response.status}</strong> - Resource ${page}.html not found</p>`
-//     } else {
-// 	const html = await response.text();
-// 	dyntag.innerHTML = html;
-//     }
-// }
-
-// function select_menu() {
-//     const mitems = document.querySelectorAll('.flexible-menu a');
-//     mitems.forEach( link => {
-//         if (link.href == location.href) {
-//             link.classList.add('selected');
-//         } else {
-//             link.classList.remove('selected');
-//         }
-//     });
-// }
-
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     console.log("Main js file loaded.");
-
-//     const flexibleMenu = document.querySelector(".flexible-menu");
-//     const hamMenu = document.querySelector(".ham-menu");
-
-//     document.querySelector('footer.footer').children[0].textContent = new Date().toUTCString();
-//     const title_tag = document.querySelector('h1.title');
-
-//     window.addEventListener('hashchange', ev => {
-//         // console.log(`Changing from ${ev.oldURL} to ${ev.newURL}`);
-//         document.querySelector('footer.footer').children[0].textContent = new Date().toUTCString();
-    
-//         const title_content = location.hash ? location.hash.slice(1) : "Home";
-// 	    title_tag.textContent = title_content;
-// 	    show_content(title_content);
-//         select_menu();
-//     })
-
-//     const title_content = location.hash ? location.hash.slice(1) : "home";
-//     title_tag.textContent = title_content;
-//     show_content(title_content);
-//     select_menu();
-
-// });
-
-
-////////////////////////////////////////////////////////////////////////////////
-
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-let flexmenu, hambutton, menuitems, maincontent;
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Document loaded.");
@@ -382,7 +291,7 @@ document.addEventListener("DOMContentLoaded", () => {
             maincontent.innerHTML = '';
             maincontent.appendChild(template.content.cloneNode(true));
             if (location.hash === '#configuration') {
-                configuration_script();
+                config();
             }
         } else {
             maincontent.innerHTML = `<h3><span class="fgred bold">404&nbsp;</span>Content not found for: <span class="fgred bold">${location.hash.slice(1)}</span></h3>`;

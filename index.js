@@ -281,6 +281,10 @@ document.addEventListener("DOMContentLoaded", () => {
         ev.currentTarget.select();
     }));
     const hashChange = () => {
+        if (!location.hash) {
+            location.hash = '#home';
+            return;
+        }
         if (location.hash === '#all') {
             document.querySelector('menu-item[href="#all"]').select();
             showAllTemplates();

@@ -156,14 +156,14 @@ let flexmenu, hambutton, menuitems, maincontent;
 
 function reset_colours() {
 
-    document.cookie = `--sel-color=acquamarine;max-age=60*60*24*30`;
+    document.cookie = `--sel-color=aqua;max-age=60*60*24*30`;
     document.cookie = `--bg-color=steelblue;max-age=60*60*24*30`;
     document.cookie = `--fg-color=aliceblue;max-age=60*60*24*30`;
     setTimeout(() => {
-        flexmenu.setAttribute('sel-color', 'acquamarine');
+        flexmenu.setAttribute('sel-color', 'aqua');
         flexmenu.setAttribute('bg-color', 'steelblue');
         flexmenu.setAttribute('fg-color', 'aliceblue');
-        document.documentElement.style.setProperty('--sel-color', 'acquamarine');
+        document.documentElement.style.setProperty('--sel-color', 'aqua');
         document.documentElement.style.setProperty('--bg-color', 'steelblue');
         document.documentElement.style.setProperty('--fg-color', 'aliceblue');
         const choices = ['cbo-menu-text-colour', 
@@ -171,7 +171,7 @@ function reset_colours() {
         'cbo-menu-background-colour'];
         document.querySelector(`#${choices[0]}`).value = colours['aliceblue'];
         document.querySelector(`#${choices[1]}`).value = colours['steelblue'];
-        document.querySelector(`#${choices[2]}`).value = colours['aquamarine'];
+        document.querySelector(`#${choices[2]}`).value = colours['aqua'];
     }, 10);
 }
 
@@ -209,7 +209,7 @@ function config() {
     }
 
     if (flexmenu) {
-        flexmenu.setAttribute('sel-color', cookie_obj['--sel-color'] || 'acquamarine');
+        flexmenu.setAttribute('sel-color', cookie_obj['--sel-color'] || 'aqua');
         flexmenu.setAttribute('bg-color', cookie_obj['--bg-color'] || 'steelblue');
         flexmenu.setAttribute('fg-color', cookie_obj['--fg-color'] || 'aliceblue');
     }
